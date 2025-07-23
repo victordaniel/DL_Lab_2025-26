@@ -9,6 +9,11 @@ import matplotlib.pyplot as plt
 x_train=x_train.astype('float32')
 x_test=x_test.astype('float32')
 
+
+x_train = (x_train - 127.5) / 127.5
+x_test = (x_test - 127.5) / 127.5
+
+
 y_train=to_categorical(y_train)
 y_test=to_categorical(y_test)
 
@@ -35,3 +40,4 @@ plt.ylabel("loss")
 plt.legend()
 plt.grid(True)
 plt.show()
+plt.savefig()
